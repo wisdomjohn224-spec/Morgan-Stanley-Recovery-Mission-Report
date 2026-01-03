@@ -1,0 +1,38 @@
+# FINAL DELIVERABLE: Summary of Findings
+
+print("\n--- Morgan Stanley Recovery Mission Report ---")
+print("Our mission was to uncover financial discrepancies and potential revenue leaks within Morgan Stanley's cross-border settlements.")
+
+print("\n### The Ghosts We Found: ###")
+
+# Ghost 1 Summary
+print("\nGhost 1: The Missing Capital")
+print("This ghost represents transactions that Morgan Stanley's internal ledger marked as 'SUCCESS' but were completely absent from the bank statement. These are transactions for which the company never received payment.")
+print(f"  - Number of Missing Transactions: {len(ghost1_transactions)}")
+print(f"  - Total Dollar Value Lost (Ghost 1): ${total_ghost1_loss:.2f}")
+
+# Ghost 2 Summary
+print("\nGhost 2: The Status Liars")
+print("This ghost identifies transactions where our internal system recorded 'SUCCESS', but the bank reported 'FAILED'. This is critical as customers may have received services without Morgan Stanley getting paid.")
+print(f"  - Number of Status Mismatch Transactions: {len(ghost2_transactions)}")
+print(f"  - Total Dollar Value Lost (Ghost 2): ${total_ghost2_loss:.2f}")
+
+# Ghost 3 Summary
+print("\nGhost 3: The Rounding Leak")
+print("This subtle ghost involves tiny, but cumulatively significant, $0.01 discrepancies between internal and bank transaction amounts. If left unchecked, these can lead to substantial losses over time.")
+print(f"  - Number of Rounding Leak Transactions: {len(ghost3_transactions)}")
+print(f"  - Total Dollar Value Lost (Ghost 3): ${total_ghost3_loss:.2f}")
+
+# Time-Lag Analysis Summary
+print("\nTime-Lag Analysis:")
+print("We also analyzed the time differences between internal and bank timestamps to understand the operational latency.")
+print(f"  - Average Latency between internal and bank logs: {average_latency_seconds:.2f} seconds")
+
+# Final Deliverables
+total_revenue_at_risk = total_ghost1_loss + total_ghost2_loss + total_ghost3_loss
+total_number_of_ghosts = 3 # We identified three distinct types of 'ghosts'
+
+print("\n--- Final Deliverables ---")
+print(f"Total Revenue at Risk: ${total_revenue_at_risk:.2f}")
+print(f"Total Number of Ghosts: {total_number_of_ghosts}")
+print("Remediation Strategy: Implement real-time reconciliation processes and automated alerts for status and amount discrepancies to prevent future revenue loss.")
